@@ -1,0 +1,11 @@
+<h1>Score:</h1>
+<% if @included %>
+  <% if @english_word %>
+    <p>Congratulations! <%= @word %> can be built with <%= @letters.join(", ") %> and is a valid English word. You've got <%= @points %> points</p>
+  <% else %>
+    <p>Sorry :(. <%= @word %> isnt a valid word in English</p>
+  <% end %>
+<% else %>
+  <p>Sorry :(. <%= @word %> can't be built with <%= @letters.join(", ") %></p>
+<% end %>
+<%= link_to "Play again", new_path %>
